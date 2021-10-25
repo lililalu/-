@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+    <TableRow>
+
+        <TextView
+            android:layout_width="203dp"
+            android:padding="3dp"
+            android:text="open..." />
+        <TextView
+            android:text="Ctrl+O"
+            android:gravity="right"
+            android:padding="3dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="save..."
+            android:padding="3dp" />
+        <TextView
+            android:text="Ctrl+S"
+            android:gravity="right"
+            android:padding="3dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="save as..."
+            android:padding="3dp" />
+        <TextView
+            android:text="Ctrl+Shift+S"
+            android:gravity="right"
+            android:padding="3dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="X import..."
+            android:padding="3dp" />
+        <TextView
+            android:text=""
+            android:gravity="right"
+            android:padding="3dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="X export..."
+            android:padding="3dp" />
+        <TextView
+            android:text="Ctrl+E"
+            android:gravity="right"
+            android:padding="3dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Quit"
+            android:padding="3dp" />
+        <TextView
+            android:text=""
+            android:gravity="right"
+            android:padding="3dp" />
+    </TableRow>
+</TableLayout>
