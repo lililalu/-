@@ -61,6 +61,7 @@ public class NotesList extends ListActivity {
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
+            NotePad.Notes.COLUMN_NAME_BACK_COLOR,
     };
 
     /** The index of the title column */
@@ -130,14 +131,14 @@ public class NotesList extends ListActivity {
         int[] viewIDs = { android.R.id.text1 , android.R.id.text2};
 
         // Creates the backing adapter for the ListView.
-        SimpleCursorAdapter adapter
-            = new SimpleCursorAdapter(
-                      this,                             // The Context for the ListView
-                      R.layout.noteslist_item,          // Points to the XML for a list item
-                      cursor,                           // The cursor to get items from
-                      dataColumns,
-                      viewIDs
-              );
+        //修改为可以填充颜色的自定义的adapter，自定义的代码在MyCursorAdapter.java中
+        MyCursorAdapter adapter = new MyCursorAdapter(
+                this,
+                R.layout.noteslist_item,
+                cursor,
+                dataColumns,
+                viewIDs
+        );
 
         // Sets the ListView's adapter to be the cursor adapter that was just created.
         setListAdapter(adapter);

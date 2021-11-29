@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
@@ -64,7 +65,8 @@ public class NoteEditor extends Activity {
         new String[] {
             NotePad.Notes._ID,
             NotePad.Notes.COLUMN_NAME_TITLE,
-            NotePad.Notes.COLUMN_NAME_NOTE
+            NotePad.Notes.COLUMN_NAME_NOTE,
+                NotePad.Notes.COLUMN_NAME_BACK_COLOR
     };
 
     // A label for the saved state of the activity
@@ -306,6 +308,35 @@ public class NoteEditor extends Activity {
         } else {
             setTitle(getText(R.string.error_title));
             mText.setText(getText(R.string.error_message));
+        }
+        //读取颜色数据
+        int x = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_BACK_COLOR));
+        /**
+         * 白 255 255 255
+         * 黄 247 216 133
+         * 蓝 165 202 237
+         * 绿 161 214 174
+         * 红 244 149 133
+         */
+        switch (x){
+            case NotePad.Notes.DEFAULT_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
+            case NotePad.Notes.YELLOW_COLOR:
+                mText.setBackgroundColor(Color.rgb(247, 216, 133));
+                break;
+            case NotePad.Notes.BLUE_COLOR:
+                mText.setBackgroundColor(Color.rgb(165, 202, 237));
+                break;
+            case NotePad.Notes.GREEN_COLOR:
+                mText.setBackgroundColor(Color.rgb(161, 214, 174));
+                break;
+            case NotePad.Notes.RED_COLOR:
+                mText.setBackgroundColor(Color.rgb(244, 149, 133));
+                break;
+            default:
+                mText.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
         }
     }
 
