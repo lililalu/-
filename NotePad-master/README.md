@@ -1,8 +1,11 @@
 # NotePad
-This is an AndroidStudio rebuild of google SDK sample NotePad
-实现了两个基础功能，时间戳和搜索
-改变颜色没能运行但有代码
-时间戳代码：
+This is an AndroidStudio rebuild of google SDK sample NotePad  
+实现了两个基础功能，时间戳和搜索  
+改变颜色没能运行但有代码 
+# 时间戳模块：
+时间戳模块实现了在每一个note下方显示创建/更改笔记的时间的功能  
+## 时间戳代码：
+```
 Date nowTime = new Date(System.currentTimeMillis());
 SimpleDateFormat sdFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 String retStrFormatNowDate = sdFormatter.format(nowTime);
@@ -14,8 +17,13 @@ private static final String[] PROJECTION = new String[] {
     };
 private String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE ,NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE} ;
 private int[] viewIDs = { Android：R.id.text1,Android：R.id.text2 };
-
-搜索代码：
+```
+## 时间戳运行截图
+![图片](https://user-images.githubusercontent.com/90608156/143823160-0c7767e4-792e-4cf4-b294-aec449eb8a8a.png)
+# 搜索模块：
+搜索模块实现根据标题(title)关键词搜索可以对应的笔记，并显示在搜索结果页面的功能  
+## 搜索代码：
+```
 public class NoteSearch extends Activity implements SearchView.OnQueryTextListener{
     ListView listview;//
     SQLiteDatabase sqLiteDatabase;
@@ -82,3 +90,9 @@ public class NoteSearch extends Activity implements SearchView.OnQueryTextListen
         return true;
     }
 }
+```
+## 搜索功能截图
+![图片](https://user-images.githubusercontent.com/90608156/143823602-eef513bb-7a82-4b9c-ba8d-f8bc3f8bc14f.png)  
+![图片](https://user-images.githubusercontent.com/90608156/143823623-4d1c5661-3442-4f96-86dd-9fa1213a07f5.png)  
+![图片](https://user-images.githubusercontent.com/90608156/143823632-4952c554-0ed8-4fbf-97da-ad16a443f2fe.png)  
+![图片](https://user-images.githubusercontent.com/90608156/143823645-c6c387da-a87c-4835-bfa4-cb3d948940d1.png)  
